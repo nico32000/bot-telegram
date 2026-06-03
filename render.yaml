@@ -1,0 +1,15 @@
+services:
+  - type: worker
+    name: motorsport-deals-bot
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: python bot.py
+    envVars:
+      - key: BOT_TOKEN
+        sync: false
+      - key: CHANNEL_ID
+        sync: false
+      - key: AFFILIATE_TAG
+        value: fullrace-21
+      - key: CHECK_INTERVAL_HOURS
+        value: "6"
